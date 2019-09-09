@@ -1,4 +1,4 @@
-OBJECTS=main.o	
+OBJECTS=main.o	../eos/uart.o
 
 ifeq ($(GCC_DIR),)
         GCC_DIR =  c:/ti/msp430_gcc/bin/

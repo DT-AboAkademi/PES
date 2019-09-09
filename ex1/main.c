@@ -1,5 +1,7 @@
-//#include "project.h"
+#include "project.h"
 #include <msp430.h>
+#include <stdio.h>
+#include "../eos/uart.h"
 
 
 #define LED1_PORT P1OUT
@@ -10,7 +12,7 @@
 #define LED2_DIR P1DIR
 #define LED2BIT BIT6
 
-
+// char buf[100];
 
 void main() {
 
@@ -19,6 +21,8 @@ void main() {
 	LED1_DIR |= LED1BIT;
 	
 	LED1_PORT |= (LED1BIT);
+
+//        sprintf(buf, "Testing this: %d\n", 7733);
 	
 	while (1) {
 
@@ -32,5 +36,10 @@ void main() {
  	
 	for (i=0;i <65535; i++) ;
 
+	char buf[30];
+   sprintf(buf, "Testing %d\n", 100);
+   
+  UART_Write(buf);	
+	
 }
 }
